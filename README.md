@@ -125,5 +125,59 @@ module.exports = {
         })
     ]
 }
-+ </code></pre>
-+ 待续...
+</code></pre>
+
+######5、优化插件（产品上线阶段）
++ webpack提供了一些在发布阶段非常有用的优化插件，它们大多来自于webpack社区，可以通过npm安装，通过以下插件可以完成产品发布阶段所需的功能。
++ OccurenceOrderPlugin :为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
++ UglifyJsPlugin：压缩JS代码；
++ ExtractTextPlugin：分离CSS和JS文件
+
+###B、Loaders
++ Loaders是webpack中最让人激动人心的功能之一了。通过使用不同的loader，webpack通过调用外部的脚本或工具可以对各种各样的格式的文件进行处理，比如说分析JSON文件并把它转换为JavaScript文件，或者说把下一代的JS文件（ES6，ES7)转换为现代浏览器可以识别的JS文件。或者说对React的开发而言，合适的Loaders可以把React的JSX文件转换为JS文件，Loaders需要单独安装并且需要在webpack.config.js下的modules关键字下进行配置，Loaders的配置选项包括以下几方面：
+	+ test：一个匹配loaders所处理的文件的拓展名的正则表达式（必须）
+	+ loader：loader的名称（必须）
+	+ include/exclude:手动添加必须处理的文件（文件夹）或屏蔽不需要处理的文件（文件夹）（可选）；
+	+ query：为loaders提供额外的设置选项（可选）
+	+ Loaders很好，不过有的Loaders使用起来比较复杂，比如说Babel。
+
+###C、Babel
++ Babel和webpack是独立的工具,二者可以一起工作
++ Babel其实是一个编译JavaScript的平台，它的强大之处表现在可以通过编译帮你达到以下目的：
+	+ 下一代的JavaScript标准（ES6，ES7），这些标准目前并未被当前的浏览器完全的支持；
+	+ 使用基于JavaScript进行了拓展的语言，比如React的JSX
++ Babel其实是几个模块化的包，其核心功能位于称为babel-core的npm包中，不过webpack把它们整合在一起使用，但是对于每一个你需要的功能或拓展，你都需要安装单独的包（用得最多的是解析Es6的babel-preset-es2015包和解析JSX的babel-preset-react包）。
++ Babel的安装
+	+ <p><code>npm install --save-dev babel-core</code></p>
+	+ <p><code>npm install --save-dev babel-loader</code></p>
+	+ <p><code>npm install --save-dev babel-preset-es2015</code></p>
+	+<p><code>npm install --save-dev babel-preset-react</code></p>
++ Babel的配置
+<pre><code>
+loaders: [
+      {
+        test: /\.css$/,
+        loader: 'style!css?modules!postcss'
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',//在webpack的module部分的loaders里进行配置即可
+        query: {
+          presets: ['es2015','react']
+        }
+      }
+    ]
+	</code></pre>
++ 现在你的webpack的配置已经允许你使用ES6以及JSX的语法了
+
+###D、缓存
++ 缓存无处不在，使用缓存的最好方法是保证你的文件名和文件内容是匹配的（内容改变，名称相应改变）
++ webpack可以把一个哈希值添加到打包的文件名中，使用方法如下,添加特殊的字符串混合体（[name], [id] and [hash]）到输出文件名前
+<pre><code>
+    plugins: [
+	.....
+    new ExtractTextPlugin("[name]-[hash].css")
+  ]
+</code></pre>
+
