@@ -1,0 +1,23 @@
+{
+  "name": "demo02",
+  "version": "1.0.0",
+  "description": "just webpack demo",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "wjf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wjf444128852.github.io"
+  },
+  "keywords": [
+    "wjf444128852"
+  ],
+  "author": "jsaon",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
+  }
+}

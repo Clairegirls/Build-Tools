@@ -1,0 +1,23 @@
+{
+  "name": "demo03",
+  "version": "1.0.0",
+  "description": "just webpack example",
+  "main": "entry.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wjf444128852.github.io"
+  },
+  "keywords": [
+    "wjf444128852"
+  ],
+  "author": "jiucheng",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
+  }
+}

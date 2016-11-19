@@ -1,0 +1,16 @@
+.app{
+    background-color: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.app span{
+    display: block;
+    font-size: 30px;
+    color: cyan;
+    text-align: center;
+    animation:changeColor 2s infinite alternate;
+}
+@keyframes changeColor {
+    0%{opacity:1;}
+    100%{opacity: 0}
+}

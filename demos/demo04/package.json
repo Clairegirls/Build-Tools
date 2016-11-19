@@ -1,0 +1,36 @@
+{
+  "name": "demo03",
+  "version": "1.0.0",
+  "description": "just webpack example",
+  "main": "entry.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wjf444128852.github.io"
+  },
+  "keywords": [
+    "wjf444128852"
+  ],
+  "author": "jiucheng",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "html-webpack-plugin": "^2.24.1",
+    "json-loader": "^0.5.4",
+    "postcss-loader": "^1.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
+}
