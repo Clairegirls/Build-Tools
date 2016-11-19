@@ -151,7 +151,7 @@ module.exports = {
 	+ <p><code>npm install --save-dev babel-core</code></p>
 	+ <p><code>npm install --save-dev babel-loader</code></p>
 	+ <p><code>npm install --save-dev babel-preset-es2015</code></p>
-	+<p><code>npm install --save-dev babel-preset-react</code></p>
+	+ <p><code>npm install --save-dev babel-preset-react</code></p>
 + Babel的配置
 <pre><code>
 loaders: [
