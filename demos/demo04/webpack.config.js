@@ -45,14 +45,16 @@ module.exports = {
     plugins:[
         new webpack.BannerPlugin("Copyright jiucheng!->Email:jiucheng0605@sina.com"),//在这个数组里面new一个就可以了
         new HtmlWebpackPlugin({
+            //9、1此时会在build下自动创建一个index.html自动引入webpack编译后对应的JS，执行：webpack-dev-server
+            //启动服务器默认就是build下刚刚自动生成的index.html
             template:__dirname+'/app/index.tmpl.html'
         })
     ],
     //4、服务器依赖包配置
     devServer: {
-        //9、使用HtmlWebpackPlugin时候把下面的注视掉才可以
-        //contentBase: "./public",//entry.js本地服务器所加载的页面所在的目录
-        //contentBase: "./app",//main.js本地服务器所加载的页面所在的目录
+        //9、2使用HtmlWebpackPlugin时候把下面的注视掉才可以
+            //contentBase: "./public",//entry.js本地服务器所加载的页面所在的目录
+            //contentBase: "./app",//main.js本地服务器所加载的页面所在的目录
         colors: true,//终端中输出结果为彩色
         historyApiFallback: true,//不跳转
         inline: true//实时刷新
