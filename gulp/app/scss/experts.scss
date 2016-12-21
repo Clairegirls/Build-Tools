@@ -1,0 +1,20 @@
+//sass可通过@extend来实现代码组合声明，使代码更加优越简洁。
+//sass style
+//-----------------------------------
+.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+.success {
+  @extend .message;
+  border-color: green;
+}
+.error {
+  @extend .message;
+  border-color: red;
+}
+.warning {
+  @extend .message;
+  border-color: yellow;
+}

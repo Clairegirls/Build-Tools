@@ -1,0 +1,35 @@
+$fontsize:1rem;
+$sumwidth:100%;
+$lineheight:0.6rem;
+$fontcolor:#fff;
+$bgcolor:#002240;
+$redcolor:#e4393c;
+//sass中可用mixin定义一些代码片段，且可传参数，方便日后根据需求调用。从此处理css3的前缀兼容轻松便捷。
+@mixin position($style) {
+  position: ($style);
+}
+.footer{
+  width: $sumwidth;
+  @include position(fixed);
+  left: 0;
+  bottom: 0;
+  background-color: $redcolor;
+  //background-color: #002240;
+}
+.footer ul{
+  overflow: hidden;
+}
+.footer li{
+  float: left;
+  width:50%;
+  line-height: $lineheight;
+  text-align: center;
+}
+.footer li a{
+  display: block;
+  text-align: center;
+  height: $lineheight;
+  line-height: $lineheight;
+  font-size: $fontsize*.24;
+  color: $fontcolor;
+}
