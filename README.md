@@ -46,13 +46,15 @@ module.exports = {
 + 在过去的一些年里，JavaScript通过一些新的语言特性，更好的工具以及更好的实践方法（比如说模块化）发展得非常迅速。模块使得开发者把复杂的代码转化为小的，干净的，依赖声明明确的单元，且基于优化工具，依赖管理和加载管理可以自动完成。
 + 不过前端的另外一部分，CSS发展就相对慢一些，大多的样式表却依旧是巨大且充满了全局类名，这使得维护和修改都非常困难和复杂。
 + 最近有一个叫做 CSS modules 的技术就意在把JS的模块化思想带入CSS中来，通过CSS模块，所有的类名，动画名默认都只作用于当前模块。Webpack从一开始就对CSS模块化提供了支持，在CSS loader中进行配置后，你所需要做的一切就是把”modules“传递都所需要的地方，然后就可以直接把CSS的类名传递到组件的代码中，且这样做只对当前组件有效，不必担心在不同的模块中具有相同的类名可能会造成的问题。具体的代码如下：
-+ <pre><code>
++ 
+```javascript
 {//3、CSS-loader
 		test:/\.css$/,
 		//跟上面的相比就在后面加上了?modules
 		loader:'style!css?modules'
 }
-</code></pre>
+```
+
 + 这样相同的类名也不会互相污染
 
 ######3、CSS预编译
@@ -65,7 +67,7 @@ module.exports = {
 	+ <p><code>npm install --save-dev autoprefixer</code></p>
 
 + 并在webpack配置文件中进行设置，只需要新建一个postcss关键字，并在里面申明依赖的插件，如下，现在你写的css会自动根据Can i use里的数据添加不同前缀了。
-<pre><code>
+```javascript
 var webpack = require('webpack');
 module.exports = {
 //“__dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录
@@ -88,14 +90,15 @@ module.exports = {
         require('autoprefixer')//调用autoprefixer插件
     ]
 }
-</code></pre>
+```
 
 ######4、webpack-pulgins，插件的使用
 + 插件（Plugins）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务。
 Loaders和Plugins常常被弄混，但是他们其实是完全不同的东西，可以这么来说，loaders是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个，插件并不直接操作单个文件，它直接对整个构建过程其作用。
 + Webpack有很多内置插件，同时也有很多第三方插件，可以让我们完成更加丰富的功能。
 + 要使用某个插件，我们需要通过npm安装它，然后要做的就是在webpack配置中的plugins关键字部分添加该插件的一个实例（plugins是一个数组），我们添加了一个实现版权声明的插件。如HtmlWebpackPugin插件，该插件的作用是依据一个简单的模板，帮你生成最终的Html5文件，这个文件中自动引用了你打包后的JS文件。每次编译都在文件名中插入一个不同的哈希值。
-+ <pre><code>
++ 
+```javascript
 var webpack = require('webpack');
 //1、引入插件
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -125,7 +128,7 @@ module.exports = {
         })
     ]
 }
-</code></pre>
+```
 
 ######5、优化插件（产品上线阶段）
 + webpack提供了一些在发布阶段非常有用的优化插件，它们大多来自于webpack社区，可以通过npm安装，通过以下插件可以完成产品发布阶段所需的功能。
@@ -153,7 +156,7 @@ module.exports = {
 	+ <p><code>npm install --save-dev babel-preset-es2015</code></p>
 	+ <p><code>npm install --save-dev babel-preset-react</code></p>
 + Babel的配置
-<pre><code>
+```javascript
 loaders: [
       {
         test: /\.css$/,
@@ -168,16 +171,17 @@ loaders: [
         }
       }
     ]
-	</code></pre>
+```
+
 + 现在你的webpack的配置已经允许你使用ES6以及JSX的语法了
 
 ###D、缓存
 + 缓存无处不在，使用缓存的最好方法是保证你的文件名和文件内容是匹配的（内容改变，名称相应改变）
 + webpack可以把一个哈希值添加到打包的文件名中，使用方法如下,添加特殊的字符串混合体（[name], [id] and [hash]）到输出文件名前
-<pre><code>
+```javascript
     plugins: [
 	.....
     new ExtractTextPlugin("[name]-[hash].css")
   ]
-</code></pre>
+```
 
