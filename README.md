@@ -23,7 +23,7 @@ webpack可以看做是**模块打包机**，它做的事情是，分析你的项
 	+ <p><code>npm install --save-dev style-loader</code></p>
 
 + 如<br>
-<pre><code>
+```javascript
 var webpack = require('webpack')；
 module.exports = {
     entry: './js/entry.js',//指定入口文件
@@ -40,7 +40,7 @@ module.exports = {
         ]
     }
 }
-</code></pre>
+```
 
 ######2、css modules
 + 在过去的一些年里，JavaScript通过一些新的语言特性，更好的工具以及更好的实践方法（比如说模块化）发展得非常迅速。模块使得开发者把复杂的代码转化为小的，干净的，依赖声明明确的单元，且基于优化工具，依赖管理和加载管理可以自动完成。
