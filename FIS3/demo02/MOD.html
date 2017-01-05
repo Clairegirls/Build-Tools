@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-1.9.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        thead th{
+            border:1px solid #999;
+            border-top:2px solid black;
+            border-right:0;
+        }
+        thead th:last-child,tbody td:last-child{border-right:1px solid #999;  }
+        thead td{height:10px;}
+        tbody td{
+            border:1px solid #999;
+            border-right:0;
+            border-bottom:0;
+        }
+         table{
+             border-bottom:1px solid #999;
+         }
+        thead th:first-child{width:61px;align-center}
+        thead th:nth-child(2){width:111px;}
+        thead th:nth-child(3){width:121px;}
+        thead th:nth-child(4){width:80px;}
+        thead th:nth-child(5){width:132px;}
+        thead th:nth-child(6){width:90px;}
+        tbody tr td:last-child{ text-align: right;}
+        .alignCenter {
+            text-align: center;
+        }
+    </style>
+    <script src="index.js"></script>
+    <!--------------------->
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.css">
+    <script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.js' charset='utf-8'></script>
+    <!--------------------->
+</head>
+<body>
+<div>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>Site</th>
+                <th>Product Group</th>
+                <th>20161102</th>
+                <th>Top(n)</th>
+                <th>Defect描述</th>
+                <th>Defect比重</th>
+            </tr>
+            <tr ><td></td></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td >T1</td>
+                <td class="items">ST315BA05</td>
+                <td></td>
+                <td >1</td>
+                <td>Cell异物晕开</td>
+                <td>0.02%</td>
+            </tr>
+            <tr>
+
+                <td  >T1</td>
+                <td class="items">ST315BA05</td>
+                <td ></td>
+                <td class="alignCenter">2</td>
+                <td>白点Mura</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+
+                <td  >T1</td>
+                <td class="items">ST315BA05</td>
+                <td ></td>
+                <td class="alignCenter">3</td>
+                <td>Cell异物亮</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td  >T1</td>
+                <td class="items">ST315BA04</td>
+                <td ></td>
+                <td class="alignCenter">1</td>
+                <td>Cell异物晕开</td>
+                <td>0.02%</td>
+            </tr>
+            <tr>
+                <td  >T1</td>
+                <td class="items">ST315BA04</td>
+                <td ></td>
+
+                <td class="alignCenter">2</td>
+                <td>白点Mura</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td  >T1</td>
+                <td class="items">ST315BA22</td>
+                <td ></td>
+
+                <td class="alignCenter">3</td>
+                <td>Cell异物亮</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td  >T1</td>
+                <td class="items">ST315BA22</td>
+                <td ></td>
+                <td class="alignCenter">1</td>
+                <td>Cell异物晕开</td>
+                <td>0.02%</td>
+            </tr>
+            <tr>
+                <td  >T1</td>
+                <td class="items">ST315BA22</td>
+                <td ></td>
+
+                <td class="alignCenter">2</td>
+                <td>白点Mura</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td  >T1</td>
+                <td class="items">ST315BA22</td>
+                <td ></td>
+
+                <td class="alignCenter">3</td>
+                <td>Cell异物亮</td>
+                <td>0.01%</td>
+            </tr>
+                <!--T2-->
+            <tr>
+                <td  >T2</td>
+                <td class="items">ST315BA11</td>
+                <td ></td>
+                <td class="alignCenter">1</td>
+                <td>Cell异物晕开</td>
+                <td>0.02%</td>
+            </tr>
+            <tr>
+
+                <td  >T2</td>
+                <td class="items">ST315BA11</td>
+                <td ></td>
+                <td class="alignCenter">2</td>
+                <td>白点Mura</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td  >T2</td>
+                <td class="items">ST315BA11</td>
+
+                <td ></td>
+                <td class="alignCenter">3</td>
+                <td>Cell异物亮</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td  >T2</td>
+                <td class="items">ST315BA33</td>
+                <td ></td>
+                <td class="alignCenter">1</td>
+                <td>Cell异物晕开</td>
+                <td>0.02%</td>
+            </tr>
+            <tr>
+
+
+                <td  >T2</td>
+                <td class="items">ST315BA33</td>
+                <td ></td>
+                <td>2</td>
+                <td>白点Mura</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+
+
+                <td  >T2</td>
+                <td class="items">ST315BA33</td>
+                <td ></td>
+                <td >3</td>
+                <td>Cell异物亮</td>
+                <td>0.01%</td>
+            </tr>
+            <tr>
+                <td  >T2</td>
+                <td class="items">ST315BA99</td>
+                <td ></td>
+                <td >1</td>
+                <td>Cell异物晕开</td>
+                <td>0.02%</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+<!--<script>-->
+<!--//    $(' tbody tr:eq(0) td:eq(1) ').attr("rowspan","3");-->
+<!--//    $(' tbody tr:eq(1) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(2) td:eq(1) ').remove();-->
+<!--//-->
+<!--//    $(' tbody tr:eq(3) td:eq(1) ').attr("rowspan","4");-->
+<!--//    $(' tbody tr:eq(4) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(5) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(6) td:eq(1) ').remove();-->
+<!--//-->
+<!--//    $(' tbody tr:eq(7) td:eq(1) ').attr("rowspan","3");-->
+<!--//    $(' tbody tr:eq(8) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(9) td:eq(1) ').remove();-->
+<!--//-->
+<!--//    $(' tbody tr:eq(10) td:eq(1) ').attr("rowspan","8");-->
+<!--//    $(' tbody tr:eq(11) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(12) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(13) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(14) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(15) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(16) td:eq(1) ').remove();-->
+<!--//    $(' tbody tr:eq(17) td:eq(1) ').remove();-->
+
+<!--function aa(){-->
+    <!--var trs=$(' tbody tr').length;-->
+    <!--for(var i=0;i<=trs;i++){-->
+        <!--var a01=$(' tbody tr:eq(i) td:eq(1) ');-->
+        <!--var a02=$(' tbody tr:eq(i+1) td:eq(1) ');-->
+       <!--if(a01!=a02){-->
+
+       <!--}-->
+    <!--}-->
+<!--}-->
+<!--aa()-->
+
+<!--</script>-->
+</body>
+</html>

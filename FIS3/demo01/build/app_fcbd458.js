@@ -1,0 +1,1 @@
+alert("Hello, World");var obj={a:10,b:20,init:function(){return console.log(this.a+this.b),this.a+this.b}};window.onload=function(){obj.init()};
