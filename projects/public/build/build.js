@@ -1,0 +1,1 @@
+webpackJsonp([0,1],[function(n,a,e){var t=e(2);n.exports=function(){var n=document.createElement("h1");return n.innerHTML="<span>"+t.name+"</span><span>"+t.do+"</span><span>"+t.what+"</span>",n}},function(n,a){},function(n,a){n.exports={name:"Life",do:"is a",what:"gradient"}},function(n,a,e){e(1);var t=e(0);document.getElementById("app").appendChild(t())}],[3]);
