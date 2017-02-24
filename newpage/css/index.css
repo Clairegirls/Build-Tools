@@ -15,6 +15,56 @@ body{
     height: 100%;
     overflow: hidden;
 }
+a:-webkit-any-link:active {
+    color: -webkit-activelink;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+}
+a,
+a:visited,
+.link,
+.link:visited {
+    border-radius: 2px;
+    box-shadow: 0;
+    color: hsl(210, 80%, 45%);
+    cursor: pointer;
+    margin-left: -2px;
+    margin-right: -2px;
+    padding: 0 2px;
+    text-decoration: underline;
+    transition: border-color 150ms, box-shadow 100ms;
+}
+
+a:hover,
+.link:hover,
+.link-demohover {
+    background: hsla(210, 80%, 50%, 0.1);
+    border: 0;
+    color: hsl(210, 80%, 40%);
+    text-decoration: none;
+}
+
+a:focus,
+.link:focus,
+.link-demofocus {
+    box-shadow: 0 0 0 3px hsla(210, 80%, 50%, 0.2);
+    outline: none;
+    outline-offset: initial;
+    position: relative;
+    text-decoration: none;
+    z-index: 999;
+}
+
+a:active,
+.link:active,
+.link-demoactive {
+    background-color: inherit;
+    color: hsl(0, 0%, 4%); /* = .font-dark */
+    text-decoration: underline;
+}
 /*bg-view*/
 .bg-view{
     position: absolute;
@@ -65,11 +115,16 @@ body{
     float: left;
     margin: 20px 40px;
     border-radius: 2px;
-    transition:all .5s;
+    /*transition:all .5s;*/
+    transition: top 0.3s, left 0.3s, opacity 0.3s;
 }
 .view-text li img{
-    box-shadow: 1px 1px 1px  #000;
     /*box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.2);*/
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.2);
+}
+.view-text li img:hover{
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 2px 8px hsla(0, 0%, 0%, 0.3);
 }
 .view-text li a,.view-text li img,.view-text li span{
     display: block;
