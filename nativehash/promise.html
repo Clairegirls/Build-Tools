@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		function Promise(fn){
+			this.state = 0;
+			this.val = '';
+			this.con = [];
+
+			setTimeout(fn.bind(this,Promise.resolve.bind(this), Promise.reject.bind(this)),0)
+		}
+
+		Promise.prototype = {
+			constructor: Promise,
+
+			then: function(suc, err){
+				var o = {
+					suc: suc,
+					err: err,
+					next: new Promise(function(){})
+				}
+
+				this.con.push(o);
+
+				return o.next;
+			},
+
+			done: function(){
+				var i = 0, con = this.con, len = con.length;
+
+				for(i = 0; i < len; i++){
+					this.handle(con[i]);
+				}
+			},
+
+			handle: function(obj){
+				var res = this.state == 1 ? obj.suc(this.val) : obj.err(this.val);
+
+				if(res instanceof Promise){
+					res.con = obj.next.con;
+				}else{
+					Promise.resolve.call(obj.next, res);
+				}
+			}
+		}
+
+		Promise.resolve = function(val){
+			this.state = 1;
+			this.val = val;
+			this.done();
+		}
+
+		Promise.reject = function(val){
+			this.state = 2;
+			this.val = val;
+			this.done();
+		}
+	</script>
+
+	<script type='text/javascript'>
+		var p = new Promise(function(resolve, reject){
+			console.log('开始异步请求A')
+			setTimeout(function(){
+				console.log('执行完请求A');
+				resolve('AAA');
+			},2000)
+		})
+
+		p.then(function(val){
+			console.log('获取A的结果:'+val+',并开始异步请求B')
+			return new Promise(function(resolve, reject){
+				setTimeout(function(){
+					console.log('执行完请求B');
+					resolve('BBB');
+				},2000)
+			})
+		}).then(function(val){
+			console.log('获取B的结果:'+val+',并执行C')
+			return 'CCC'
+		}).then(function(val){
+			console.log('获取C的结果:'+val+',并执行D')
+		})
+	</script>
+</body>
+</html>

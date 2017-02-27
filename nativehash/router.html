@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<div id='root'></div>
+</body>
+	<script>
+		function Router(){
+			this.routers = {};
+
+			this.init();
+		}
+
+		Router.prototype = {
+			constructor: Router,
+
+			// 注册路由
+			register: function(name, module){
+				this.routers[name] = module;
+				return this;
+			},
+
+			// 初始化
+			init: function(){
+				var fun = function(){
+					var str = window.location.hash.substring(1);
+					console.log(str);
+					var module = this.routers[str];
+					module && module.init();
+				}.bind(this)
+
+				window.addEventListener('hashchange', fun);
+				window.addEventListener('load', fun);
+			},
+		}
+
+		// 配置信息
+		Router.config = function(opts){
+
+		}
+
+	var Home = (function(){
+		return {
+			init: function(){
+				this.list = [];
+				this.render().eventListener();
+			},
+
+			events: function(){
+				this.register('homePage', 'click', 'click1');
+			},
+
+			
+			render: function(){
+				var root = document.getElementById('root');
+				root.innerHTML = '<div id="homePage">home page</div>'
+				return this;
+			},
+
+		
+			onClick1: function(){
+				console.log('home page click1 event')
+			},
+
+
+
+			eventListener: function(){
+				var self = this;
+
+				this.events();
+
+				this.list.forEach(function(val, i){
+					var fun = self[val[2]] || function(){};
+					document.getElementById(val[0]).addEventListener(val[1], fun);
+				})
+			},
+
+			register: function(id, event, sfun){
+				var arr = sfun.split('');
+				arr[0] = arr[0].toUpperCase();
+				this.list.push([id, event, 'on' + arr.join('')]);
+				return this;
+			},
+		}
+	}());
+
+
+	var About = (function(){
+		return {
+			init: function(){
+				this.list = [];
+				this.render().eventListener();
+			},
+
+			events: function(){
+				this.register('aboutPage', 'click', 'click1');
+			},
+
+			
+			render: function(){
+				var root = document.getElementById('root');
+				root.innerHTML = '<div id="aboutPage">about page</div>'
+				return this;
+			},
+
+		
+			onClick1: function(){
+				console.log('about page click1 event')
+			},
+
+
+
+			eventListener: function(){
+				var self = this;
+
+				this.events();
+
+				this.list.forEach(function(val, i){
+					var fun = self[val[2]] || function(){};
+					document.getElementById(val[0]).addEventListener(val[1], fun);
+				})
+			},
+
+			register: function(id, event, sfun){
+				var arr = sfun.split('');
+				arr[0] = arr[0].toUpperCase();
+				this.list.push([id, event, 'on' + arr.join('')]);
+				return this;
+			},
+		}
+	}())
+	
+
+	var r = new Router();
+
+	r.register('home', Home)
+	 .register('about', About)
+
+	//r.init();
+
+
+
+	</script>
+</html>
