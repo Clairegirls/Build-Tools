@@ -1,21 +1,28 @@
 /**
  * Created by wangjianfei on 2017/3/16.
  */
-var webpack = require('webpack');
+const webpack = require('webpack');
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+//1导入HtmlWebpackPlugin插件,作用按需求生成html页面
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+//2 导入ExtractTextPlugin插件,作用提取代码中的css生成独立的CSS文件
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: __dirname+'/src/entry.js',
     output: {
         //webpack2 输出路径配置
         path: path.resolve(__dirname, 'build'),
-        filename: 'first-build.js'
+        filename: '[name].[id].[hash].js'
     },
     module: {
         loaders: [
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
+            },
+            { //3.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
+                test: /\.scss$/,
+                loader: 'style-loader!css-loader!sass-loader?sourceMap'
             },
             {//6、编译es6配置
                 test:/\.js$/,
@@ -24,6 +31,16 @@ module.exports = {
                 query:{
                     presets:['es2015']
                 }
+            },
+            {
+                //url-loader处理图片URL,如果图片小于limit值直接生成`base64` 格式的`dataUrl`,否则输出图片,name参数指定输出目录和图片名
+                //url-loader依赖file-loader
+                //image-webpack-loader是用来压缩图片的,主要是透明PNG
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loaders: [
+                    'url-loader?limit=8192&name=img/[name].[hash].[ext]',
+                    'image-webpack-loader?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
+                ]
             }
         ]
     },

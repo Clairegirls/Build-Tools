@@ -17,3 +17,4 @@
     },500);
 
     require("./css/style.css");
+    require("./css/test.scss");
