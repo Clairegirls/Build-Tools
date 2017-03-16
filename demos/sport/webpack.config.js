@@ -18,7 +18,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                //loader: 'style-loader!css-loader'
+                //0.1把引入的css文件打包到一个单独的css文件
+                loader: ExtractTextPlugin.extract(
+                    'css-loader'
+                )
             },
             { //3.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
                 test: /\.scss$/,
@@ -45,6 +49,8 @@ module.exports = {
         ]
     },
     plugins: [
+        //0 输出独立的css文件,用于external link形式,如果有多个入口JS共用的CSS,会生成commons.css
+        new ExtractTextPlugin('[name].[id].[hash].css'),
         //1追加作者信息插件
         new webpack.BannerPlugin("Copyright jiucheng!->Email:jiucheng0605@sina.com"),
         //2 使用htnl模板插件
@@ -63,6 +69,7 @@ module.exports = {
                     colors: true, //终端中输出结果为彩色
                     historyApiFallback: true, //不跳转
                     inline: true //实时刷新
+                    //port:9090  //重新配置端口号
                 }
             }
         })

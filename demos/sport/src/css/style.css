@@ -20,6 +20,7 @@ html,body{
     background: rgba(0,0,0,.5);
     padding: 2%;
     transition: all .5s;
+    position: relative;
 }
 .main h1{
     font-size: 20px;
