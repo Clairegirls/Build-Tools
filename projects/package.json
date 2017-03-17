@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jiuchengcoding/%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BDgithub.com%2F%1B%5BC%1B%5BC%1B%5Bjiuchengcoding.git"
+    "url": "https://github.com/wjf444128852"
   },
   "keywords": [
     "bluehawk0605"
@@ -17,9 +17,9 @@
   "author": "jiucheng",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jiuchengcoding/%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BDgithub.com%2F%1B%5BC%1B%5BC%1B%5Bjiuchengcoding/issues"
+    "url": "https://github.com/wjf444128852/issues"
   },
-  "homepage": "https://github.com/jiuchengcoding/%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BD%1B%5BDgithub.com%2F%1B%5BC%1B%5BC%1B%5Bjiuchengcoding#readme",
+  "homepage": "https://github.com/wjf444128852",
   "devDependencies": {
     "autoprefixer": "^6.7.3",
     "css-loader": "^0.26.1",
