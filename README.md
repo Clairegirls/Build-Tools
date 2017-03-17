@@ -1,7 +1,10 @@
 ###Webpack(<a href="http://www.cnblogs.com/-walker/p/6056529.html" target="_blank">案例使用介绍</a>)
+
 ####一、什么是webpack
+
 webpack可以看做是**模块打包机**，它做的事情是，分析你的项目结构，找到Javascript模块以及其它的一些浏览器不能直接运行的扩展语言(Scss、TypeScript)，并将其打包为合适的格式以供浏览器使用。
 ###二、为何要使用webpak
+
 + 如今很多网页其实可以看做是功能丰富的应用，它们拥有着复杂的javascript代码和一大堆依赖包，为了简化开发的复杂度，前端社区涌现了很多好的实践方法。
 + 模块化，让我们可以把复杂的程序化为小的文件
 + 类似于TypeScript这种在Javascript基础上扩展的开发语言，使我们能够实现目前版本的Javascript不能直接使用的特性，并且之后还能转换为Javascript文件使浏览器可以识别
