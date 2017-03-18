@@ -4,12 +4,12 @@
 + webstorm的话，添加到环境变量就OK，如我的ws，我把：E:\tools\WS\WebStorm 2016.3.4\bin；添加到环境变量，然后在文件夹下输入：webstorm .就会自动把所在文件夹用ws打开了
 
 ##目录
-+ 1启动server webpack-dev-server
-+ 2模块化开发commonjs
-+ 3版本号控制 hash  chunkhash
++ 1 启动server webpack-dev-server
++ 2 模块化开发commonjs
++ 3 版本号控制 hash  chunkhash
 + 4 css，sass引入
-+ 5html自定义模板
-+ 6抽离css
++ 5 html自定义模板
++ 6 抽离css
 + 7 压缩合并JS
 + 8 用babel编译es6,需要创建.babelrc文件
 
@@ -82,6 +82,10 @@
 + json-server mock/mock.js -p 9000
 + ![查看](images/json-server04.png)
 + 默认监听的是mock.js
+
+###8.1 如何用fetch去发送Ajax请求
++ [fetch简介](https://segmentfault.com/a/1190000003810652)
++ 如：student.js/9.0
 
 ###9 postman测试接口的chrome扩展程序
 + 翻墙之后在chrome扩展应用商店搜索postman并安装该扩展程序，会自动安装一个本地的postman程序，注册登录打开后可以测试后台的接口文档。如查看豆瓣：即将上映的电影api接口如下：

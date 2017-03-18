@@ -8,6 +8,7 @@
 //7 压缩合并JS
 //8 用babel编译es6,需要创建.babelrc文件
 //9 mock数据(npm i json-server -g 搭建虚拟服务器)
+//10 external外部配置文件(开发依赖)，例如项目用到jQuery
 
 
 var webpack=require('webpack');
@@ -43,7 +44,15 @@ module.exports={
     devServer:{
         contentBase:'./build',
         inline: true,
-        port:8000
+        port:8000,
+        //9.1配置后台接口
+        proxy:{
+            //路由映射
+            "/api/theaters_data":{
+                target:'http://localhost:9000/theaters_data',
+                pathRewrite: {"^/api/theaters_data":""}
+            }
+        }
     },
     //5 引入loaders
     module:{
