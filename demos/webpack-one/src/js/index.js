@@ -7,6 +7,6 @@ require('../css/main.css');
 require('../css/test.scss');
 var students=require('./student');
 //4 、使用模块
-//console.log(app);
+console.log(arr[1]);
 
 console.log(students.speak());

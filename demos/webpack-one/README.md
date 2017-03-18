@@ -11,6 +11,7 @@
 + 5html自定义模板
 + 6抽离css
 + 7 压缩合并JS
++ 8 用babel编译es6,需要创建.babelrc文件
 
 ####一、 命令行操作创建文件夹和文件
 + mkdir flodName创建文件夹
@@ -36,6 +37,7 @@
 )，说明输出路径必须是绝对路径
 + devserver有自动刷新功能
 + webpack-dev-server --hot --inline
++ 题外话，启动服务器后浏览器查看DOM会看到html标签下有shadow-root，具体了解请[参考图灵社区](http://www.ituring.com.cn/article/177453 "组件化")
 
 ###3.2 如何给文件配置版本号，清除缓存
 + filename:'[name]_[chunkhash].js'
@@ -67,3 +69,22 @@
 + npm install babel-core --save-dev
 + npm install babel-loader --save-dev
 + npm install babel-preset-es2015 --save-dev
+
+###8 json-server搭建虚拟服务器
++ npm install json-server -g
++ ![查看](images/json-server01.png)
++ mock文件夹下是接口数据文件和mock.js(作为mock数据的配置)
++ .json是字符串，里面key和value必须有双引号
++ 现在可以用json-server搭建一个虚拟服务器，如命令行运行：json-server mock/mock.js 如下
++ ![查看](images/json-server02.png)
++ json-server的参数配置如：
++ ![查看](images/json-server03.png)
++ json-server mock/mock.js -p 9000
++ ![查看](images/json-server04.png)
++ 默认监听的是mock.js
+
+###9 postman测试接口的chrome扩展程序
++ 翻墙之后在chrome扩展应用商店搜索postman并安装该扩展程序，会自动安装一个本地的postman程序，注册登录打开后可以测试后台的接口文档。如查看豆瓣：即将上映的电影api接口如下：
++ ![测试接口](images/postman01.png)
++ 可以搜索：豆瓣开发者(公开的接口文档)
++ 当然也可以直接浏览器输入接口地址，借助chrome的JSONView扩展程序去盘版接口文档，不然默认的很难看清楚

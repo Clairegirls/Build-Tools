@@ -1,12 +1,15 @@
 //模块化思想
-//1启动server webpack-dev-server
-//2模块化开发commonjs
-//3版本号控制 hash  chunkhash
+//1 启动server webpack-dev-server
+//2 模块化开发commonjs
+//3 版本号控制 hash或者chunkhash
 //4 css，sass引入
-// 5html自定义模板
-// 6抽离css
+//5 html自定义模板
+//6 抽离css
 //7 压缩合并JS
 //8 用babel编译es6,需要创建.babelrc文件
+//9 mock数据(npm i json-server -g 搭建虚拟服务器)
+
+
 var webpack=require('webpack');
 //4 配置HTML 模板 ,插件
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -87,16 +90,16 @@ module.exports={
         }),
         //7 代码优化：合并以及压缩代码
         // 开发环境暂时不需要
-        //new webpack.optimize.UglifyJsPlugin({
-        //    //7.1输出不显示警告
-        //    compress:{
-        //        warnings:false
-        //    },
-        //    //7.2 输出去掉注释
-        //    output:{
-        //        comments:false
-        //    }
-        //}),
+        new webpack.optimize.UglifyJsPlugin({
+            //7.1输出不显示警告
+            compress:{
+                warnings:false
+            },
+            //7.2 输出去掉注释
+            output:{
+                comments:false
+            }
+        }),
         //6.1 css抽离
         new ExtractTextPlugin({
             filename:'app_[hash].css',
