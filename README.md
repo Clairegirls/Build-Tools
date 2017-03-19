@@ -1,5 +1,5 @@
 ### webpack案例
-+  1 [豆瓣热映电影](http://wjf444128852.github.io/sumDemos/doubanmovie/index.html)(源码在demos/webpack-one)
++  1 [豆瓣热映电影](http://wjf444128852.github.io/sumDemos/doubanmovie/)(源码在demos/webpack-one)
 
 ####一、什么是webpack【以下相关配置是1.0+，2.0+相关请参考官网】
 
