@@ -1,6 +1,7 @@
-###Webpack(<a href="http://www.cnblogs.com/-walker/p/6056529.html" target="_blank">案例使用介绍</a>)
+### webpack案例
++  1 [豆瓣热映电影](http://wjf444128852.github.io/sumDemos/doubanmovie/index.html)(源码在demos/webpack-one)
 
-####一、什么是webpack
+####一、什么是webpack【以下相关配置是1.0+，2.0+相关请参考官网】
 
 webpack可以看做是**模块打包机**，它做的事情是，分析你的项目结构，找到Javascript模块以及其它的一些浏览器不能直接运行的扩展语言(Scss、TypeScript)，并将其打包为合适的格式以供浏览器使用。
 ###二、为何要使用webpak
