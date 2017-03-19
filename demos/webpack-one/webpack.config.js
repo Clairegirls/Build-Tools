@@ -19,7 +19,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports={
     //1 配置入口
-    entry:'./src/js/index.js',
+    //entry:'./src/js/index.js',
+    entry:'./src/js/entry.js',
     // 1.1 如果有多个入口
     //entry: ['./src/js/serch.js','./src/index.js'],
     //1.2 入口以对象的话，称为chunks，
@@ -48,9 +49,9 @@ module.exports={
         //9.1配置后台接口
         proxy:{
             //路由映射
-            "/api/theaters_data":{
-                target:'http://localhost:9000/theaters_data',
-                pathRewrite: {"^/api/theaters_data":""}
+            "/api":{
+                target:'http://localhost:9000/',
+                pathRewrite: {"^/api":""}
             }
         }
     },
@@ -90,7 +91,7 @@ module.exports={
     plugins:[
         new HtmlWebpackPlugin({
             //4.1配置参数,html的title
-            title:'webpack的配置',
+            title:'正在热映[豆瓣]',
             abc:'自定义输出',
             // 4.2 输出后html的名字，可以自定义
             filename:'index.html',
@@ -115,5 +116,9 @@ module.exports={
             disable:false,
             allChunks:true
         })
-    ]
+    ],
+    //10 项目依赖，如JQ
+    externals: {
+        jquery: 'window.jQuery'
+    }
 };

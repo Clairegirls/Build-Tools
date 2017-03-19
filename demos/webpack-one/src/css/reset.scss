@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: 0;
+}
+*,:after,:before{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.clear,
+.clear:before,
+.clear:after{
+  display: table;
+  content: '';
+  clear: both;
+}
+body {
+  font-family: Microsoft YaHei,Helvetica,STHeiTi,sans-serif;
+  color: #575757;
+  background-color: #fff;
+  outline: 0;
+  margin: auto;
+  font-size: .2rem;
+}

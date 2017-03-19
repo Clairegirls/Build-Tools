@@ -4,7 +4,7 @@
 //4个步骤
 //1 定义一个模块
 const arr=['张无忌','周芷若','郭靖'];
-setTimeout(()=>{
+setTimeout(function(){
     console.log(arr[0]);
 },500);
 //2 module.exports 暴露接口

@@ -5,11 +5,11 @@ import { arr } from './app'
 //5 引入css
 require('../css/main.css');
 require('../css/test.scss');
-var students=require('./student');
+var movedata=require('./moviedata');
 //4 、使用模块
 console.log(arr[1]);
 
-console.log(students.speak());
+console.log(movedata.speak());
 
 //9.1
-students.getData();
+movedata.getData();
