@@ -32,7 +32,8 @@ var Move={
                             '<h3>'+movelists[i].title+'</h3>'+
                             '<p>类型：'+'<span>'+movelists[i].genres.join('、')+'</span>'+'</p>'+
                             '<p>导演：'+'<span>'+movelists[i].directors[0].name+'</span>'+'</p>'+
-                            '<p>领衔主演：<br>'+'<span>'+movelists[i].casts[0].name+'、'+movelists[i].casts[1].name+'</span>'+'</p>'+
+                            // '<p>领衔主演：<br>'+'<span>'+movelists[i].casts[0].name+'、'+movelists[i].casts[1].name+'</span>'+'</p>'+
+                            '<p>领衔主演：<br>'+'<span>'+movelists[i].casts[0].name+'</span>'+'</p>'+
                             '<p>豆瓣评分：'+'<span>'+movelists[i].rating.average+'分</span>'+'</p>'+
                             '<p>上映年份：'+'<span>'+movelists[i].year+'年</span>'+'</p>'+
                             '<p>评价人数：'+'<span>'+movelists[i].collect_count+'人评价</span>'+'</p>'+
