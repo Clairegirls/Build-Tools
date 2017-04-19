@@ -1,10 +1,10 @@
 ### webpack案例
 +  1 [豆瓣热映电影](http://wjf444128852.github.io/sumDemos/doubanmovie/)(源码在demos/webpack-one)
 
-####一、什么是webpack【以下相关配置是1.0+，2.0+相关请参考官网】
+#### 一、什么是webpack【以下相关配置是1.0+，2.0+相关请参考官网】
 
 webpack可以看做是**模块打包机**，它做的事情是，分析你的项目结构，找到Javascript模块以及其它的一些浏览器不能直接运行的扩展语言(Scss、TypeScript)，并将其打包为合适的格式以供浏览器使用。
-###二、为何要使用webpak
+### 二、为何要使用webpak
 
 + 如今很多网页其实可以看做是功能丰富的应用，它们拥有着复杂的javascript代码和一大堆依赖包，为了简化开发的复杂度，前端社区涌现了很多好的实践方法。
 + 模块化，让我们可以把复杂的程序化为小的文件
@@ -12,15 +12,15 @@ webpack可以看做是**模块打包机**，它做的事情是，分析你的项
 + SCSS、LESS等CSS预处理器......
 + 这些改进确实大大提高了我们的开发效率，但是利用他们开发的文件往往需要进行额外的处理才能让浏览器识别，而手动处理又是非常繁琐的，这就为webpack类工具的出现提供了需求
 
-###三、Webpack和Grunt、Gulp相比有什么特性
+###	三、Webpack和Grunt、Gulp相比有什么特性
 + 其实webpack和它们并没有太多的可比性，Grunt、Gulp是一种能够优化前端的开发流程工具，而webpack是一种模块化的解决方案，不过webpack的优点使webpack可以代替Grunt、Gulp类的工具
 + Grunt、Gulp的工作方式是：在一个配置文件中，指明对某些文件进行类似编译、组合、压缩等任务的具体步骤，这个工具之后可以自动替你完成这些任务
 + webpack的工作方式是：把你的项目当做一个整体，通过一个指定的入口文件如(entry.js)，webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理他们，最后打包为一个浏览器可以识别的Javascript脚本。
 
-###四、webpack的优点以及简单使用
-####A：模块化
+###	四、webpack的优点以及简单使用
+#### A：模块化
 在webpack看来一切都是模块，这就是不可不说的优点，包括你的Javascript代码，也包括CSS以及图片等等，只要通过合适的loaders，它们都可以被当做模块被处理。
-######1、CSS
+######	1、CSS
 + webpack提供两个工具处理样式表，css-loader和style-loader，二者处理的任务不同，css-loader让你能够使用类似@import和url(..)的方式实现require()的功能，style-loader将所有计算后的样式加入页面中，二者组合在一起，让你能够把样式表嵌入webpack打包后的JS文件中，最终以style的形式写入head中。
 + 使用：需要分别安装 
 	+ <p><code>npm install --save-dev css-loader</code></p>
@@ -46,7 +46,7 @@ module.exports = {
 }
 ```
 
-######2、css modules
+######	2、css modules
 + 在过去的一些年里，JavaScript通过一些新的语言特性，更好的工具以及更好的实践方法（比如说模块化）发展得非常迅速。模块使得开发者把复杂的代码转化为小的，干净的，依赖声明明确的单元，且基于优化工具，依赖管理和加载管理可以自动完成。
 + 不过前端的另外一部分，CSS发展就相对慢一些，大多的样式表却依旧是巨大且充满了全局类名，这使得维护和修改都非常困难和复杂。
 + 最近有一个叫做 CSS modules 的技术就意在把JS的模块化思想带入CSS中来，通过CSS模块，所有的类名，动画名默认都只作用于当前模块。Webpack从一开始就对CSS模块化提供了支持，在CSS loader中进行配置后，你所需要做的一切就是把”modules“传递都所需要的地方，然后就可以直接把CSS的类名传递到组件的代码中，且这样做只对当前组件有效，不必担心在不同的模块中具有相同的类名可能会造成的问题。具体的代码如下：
@@ -61,7 +61,7 @@ module.exports = {
 
 + 这样相同的类名也不会互相污染
 
-######3、CSS预编译
+######	3、CSS预编译
 + Sass 和 Less之类的预处理器是对原生CSS的拓展，它们允许你使用类似于variables, nesting, mixins, inheritance等不存在于CSS中的特性来写CSS，CSS预处理器可以这些特殊类型的语句转化为浏览器可识别的CSS语句，你现在可能都已经熟悉了，在webpack里使用相关loaders进行配置就可以使用了，以下是常用的CSS处理loaders
 	+ <p><code>less-loader</code></p>
 	+ <p><code>sass-loader</code></p>
@@ -96,7 +96,7 @@ module.exports = {
 }
 ```
 
-######4、webpack-pulgins，插件的使用
+######	4、webpack-pulgins，插件的使用
 + 插件（Plugins）是用来拓展Webpack功能的，它们会在整个构建过程中生效，执行相关的任务。
 Loaders和Plugins常常被弄混，但是他们其实是完全不同的东西，可以这么来说，loaders是在打包构建过程中用来处理源文件的（JSX，Scss，Less..），一次处理一个，插件并不直接操作单个文件，它直接对整个构建过程其作用。
 + Webpack有很多内置插件，同时也有很多第三方插件，可以让我们完成更加丰富的功能。
@@ -134,13 +134,13 @@ module.exports = {
 }
 ```
 
-######5、优化插件（产品上线阶段）
+######	5、优化插件（产品上线阶段）
 + webpack提供了一些在发布阶段非常有用的优化插件，它们大多来自于webpack社区，可以通过npm安装，通过以下插件可以完成产品发布阶段所需的功能。
 + OccurenceOrderPlugin :为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
 + UglifyJsPlugin：压缩JS代码；
 + ExtractTextPlugin：分离CSS和JS文件
 
-###B、Loaders
+###	B、Loaders
 + Loaders是webpack中最让人激动人心的功能之一了。通过使用不同的loader，webpack通过调用外部的脚本或工具可以对各种各样的格式的文件进行处理，比如说分析JSON文件并把它转换为JavaScript文件，或者说把下一代的JS文件（ES6，ES7)转换为现代浏览器可以识别的JS文件。或者说对React的开发而言，合适的Loaders可以把React的JSX文件转换为JS文件，Loaders需要单独安装并且需要在webpack.config.js下的modules关键字下进行配置，Loaders的配置选项包括以下几方面：
 	+ test：一个匹配loaders所处理的文件的拓展名的正则表达式（必须）
 	+ loader：loader的名称（必须）
@@ -148,7 +148,7 @@ module.exports = {
 	+ query：为loaders提供额外的设置选项（可选）
 	+ Loaders很好，不过有的Loaders使用起来比较复杂，比如说Babel。
 
-###C、Babel
+###	C、Babel
 + Babel和webpack是独立的工具,二者可以一起工作
 + Babel其实是一个编译JavaScript的平台，它的强大之处表现在可以通过编译帮你达到以下目的：
 	+ 下一代的JavaScript标准（ES6，ES7），这些标准目前并未被当前的浏览器完全的支持；
@@ -179,7 +179,7 @@ loaders: [
 
 + 现在你的webpack的配置已经允许你使用ES6以及JSX的语法了
 
-###D、缓存
+###	D、缓存
 + 缓存无处不在，使用缓存的最好方法是保证你的文件名和文件内容是匹配的（内容改变，名称相应改变）
 + webpack可以把一个哈希值添加到打包的文件名中，使用方法如下,添加特殊的字符串混合体（[name], [id] and [hash]）到输出文件名前
 ```javascript
