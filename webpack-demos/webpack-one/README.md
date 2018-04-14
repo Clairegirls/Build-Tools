@@ -85,7 +85,7 @@
 
 ### 8.1 如何用fetch去发送Ajax请求
 + [fetch简介](https://segmentfault.com/a/1190000003810652)
-+ 如：student.js/9.0
++ 如：src/Utils.js
 
 ### 9 postman测试接口的chrome扩展程序
 + 翻墙之后在chrome扩展应用商店搜索postman并安装该扩展程序，会自动安装一个本地的postman程序，注册登录打开后可以测试后台的接口文档。如查看豆瓣：即将上映的电影api接口如下：
